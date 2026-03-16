@@ -1,11 +1,13 @@
+# 🌐 GEO AI Agent
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/getbindu/create-bindu-agent/refs/heads/main/assets/light.svg" alt="bindu Logo" width="200">
 </p>
 
-<h1 align="center">geoai-agent</h1>
+<h1 align="center">GEO AI Agent</h1>
 
 <p align="center">
-  <strong>A Bindu AI agent for intelligent task handling</strong>
+  <strong>AI-powered content optimization and SEO analysis agent</strong>
 </p>
 
 <p align="center">
@@ -21,12 +23,15 @@
 
 ## 📖 Overview
 
-A Bindu AI agent for intelligent task handling. Built on the [Bindu Agent Framework](https://github.com/getbindu/bindu) for the Internet of Agents.
+GEO AI Agent is a comprehensive content optimization and SEO analysis tool built on the [Bindu Agent Framework](https://github.com/getbindu/bindu). It performs a sophisticated 6-agent workflow to analyze web content and provide actionable optimization recommendations.
 
 **Key Capabilities:**
-- 🔍 [Add your key capabilities here]
-- ✅ [Add another capability]
-- 🚨 [Add another capability]
+- � **Title Extraction** - Automatically extracts main titles from web pages
+- 🔍 **Query Fan-Out Research** - Performs comprehensive web searches and discovers related queries
+- 🎯 **Main Query Extraction** - Identifies core search queries for SEO optimization
+- 🤖 **AI Overview Retrieval** - Fetches Google AI overviews and generates fallback content
+- � **Query Summarization** - Creates structured summaries of search findings
+- ⚡ **Content Optimization** - Generates comparison reports with actionable recommendations
 
 ---
 
@@ -36,7 +41,7 @@ A Bindu AI agent for intelligent task handling. Built on the [Bindu Agent Framew
 
 - Python 3.10+
 - [uv](https://github.com/astral-sh/uv) package manager
-- API keys for OpenRouter and Mem0 (both have free tiers)
+- API keys for OpenRouter and SERP
 
 ### Installation
 
@@ -63,7 +68,7 @@ Edit `.env` and add your API keys:
 | Key | Get It From | Required |
 |-----|-------------|----------|
 | `OPENROUTER_API_KEY` | [OpenRouter](https://openrouter.ai/keys) | ✅ Yes |
-| `MEM0_API_KEY` | [Mem0 Dashboard](https://app.mem0.ai/dashboard/api-keys) | If you want to use Mem0 tools |
+| `SERP_API_KEY` | [SERP.dev](https://serper.dev/) | ✅ Yes |
 
 ### Run the Agent
 
@@ -74,18 +79,6 @@ uv run python -m geoai_agent
 # Agent will be available at http://localhost:3773
 ```
 
-### Github Setup
-
-```bash
-# Initialize git repository and commit your code
-git init -b main
-git add .
-git commit -m "Initial commit"
-
-# Create repository on GitHub and push (replace with your GitHub username)
-gh repo create Paraschamoli/geoai-agent --public --source=. --remote=origin --push
-```
-
 ---
 
 ## 💡 Usage
@@ -93,34 +86,45 @@ gh repo create Paraschamoli/geoai-agent --public --source=. --remote=origin --pu
 ### Example Queries
 
 ```bash
-# Example query 1
-"[Add example query here]"
+# Analyze a website for SEO optimization
+"Analyze and optimize the webpage content for the following URL:
 
-# Example query 2
-"[Add another example]"
+https://www.nike.com
+
+Focus on:
+- Extracting the page title
+- Generating related Google search queries
+- Fetching AI Overviews
+- Comparing the page content with search results
+- Providing actionable SEO and content optimization suggestions"
 ```
 
 ### Input Formats
 
 **Plain Text:**
 ```
-[Describe expected input format]
-```
+Analyze and optimize the webpage content for the following URL:
 
-**JSON:**
-```json
-{
-  "content": "[example content]",
-  "focus": "[example focus]"
-}
+https://example.com
+
+Focus on:
+- Extracting the page title
+- Generating related Google search queries
+- Fetching AI Overviews
+- Comparing the page content with search results
+- Providing actionable SEO and content optimization suggestions
 ```
 
 ### Output Structure
 
-The agent returns structured output with:
-- **[Output Component 1]**: Description
-- **[Output Component 2]**: Description
-- **[Output Component 3]**: Description
+The agent returns a comprehensive optimization report with:
+- **Executive Summary**: Brief overview of current content status
+- **Title Analysis**: Extracted title and SEO assessment
+- **Query Fan-Out Research**: Comprehensive search findings
+- **Main Query Extraction**: Core search query for optimization
+- **AI Overview Analysis**: Google AI overview content
+- **Query Fan-Out Summary**: Structured summary of findings
+- **Content Optimization Comparison**: Detailed comparison table with action items
 
 ---
 
@@ -134,7 +138,6 @@ For complete API documentation, request/response formats, and examples, visit:
 
 📚 **[Bindu API Reference - Send Message to Agent](https://docs.getbindu.com/api-reference/all-the-tasks/send-message-to-agent)**
 
-
 ### Additional Resources
 
 - 📖 [Full API Documentation](https://docs.getbindu.com/api-reference/all-the-tasks/send-message-to-agent)
@@ -145,92 +148,37 @@ For complete API documentation, request/response formats, and examples, visit:
 
 ## 🎯 Skills
 
-### geoai_agent (v1.0.0)
+### GEO AI Content Optimizer (v1.0.0)
 
 **Primary Capability:**
-- [Describe what this skill does]
-- [Add key features]
+- Comprehensive web content analysis and SEO optimization
+- 6-agent workflow for detailed content optimization
+- AI-powered comparison reports with actionable recommendations
 
 **Features:**
-- [Feature 1]
-- [Feature 2]
-- [Feature 3]
+- Automatic title extraction from web pages
+- Comprehensive query fan-out research
+- Google AI overview retrieval and analysis
+- Structured content summarization
+- Detailed comparison tables
+- Prioritized action items for SEO improvement
 
 **Best Used For:**
-- [Use case 1]
-- [Use case 2]
-- [Use case 3]
+- Website SEO optimization
+- Content gap analysis
+- Competitive research
+- AI overview targeting
+- Search visibility improvement
 
 **Not Suitable For:**
-- [Anti-pattern 1]
-- [Anti-pattern 2]
+- Real-time monitoring (analysis is static)
+- Technical SEO audits (focuses on content)
+- Link building strategies
 
 **Performance:**
-- Average processing time: ~[X] seconds
-- Max concurrent requests: [N]
-- Memory per request: [X]MB
-
----
-
-## 🐳 Docker Deployment
-
-### Local Docker Setup
-
-```bash
-# Build and run with Docker Compose
-docker-compose up --build
-
-# Agent will be available at http://localhost:3773
-```
-
-### Docker Configuration
-
-The agent runs on port `3773` and requires:
-- `OPENROUTER_API_KEY` environment variable
-- `MEM0_API_KEY` environment variable
-
-Configure these in your `.env` file before running.
-
-### Production Deployment
-
-```bash
-# Use production compose file
-docker-compose -f docker-compose.prod.yml up -d
-```
-
----
-
-## 🌐 Deploy to bindus.directory
-
-Make your agent discoverable worldwide and enable agent-to-agent collaboration.
-
-### Setup GitHub Secrets
-
-```bash
-# Authenticate with GitHub
-gh auth login
-
-# Set deployment secrets
-gh secret set BINDU_API_TOKEN --body "<your-bindu-api-key>"
-gh secret set DOCKERHUB_TOKEN --body "<your-dockerhub-token>"
-```
-
-Get your keys:
-- **Bindu API Key**: [bindus.directory](https://bindus.directory) dashboard
-- **Docker Hub Token**: [Docker Hub Security Settings](https://hub.docker.com/settings/security)
-
-### Deploy
-
-```bash
-# Push to trigger automatic deployment
-git push origin main
-```
-
-GitHub Actions will automatically:
-1. Build your agent
-2. Create Docker container
-3. Push to Docker Hub
-4. Register on bindus.directory
+- Average processing time: ~30-60 seconds
+- Max concurrent requests: 10
+- Memory per request: ~500MB
 
 ---
 
@@ -242,11 +190,10 @@ GitHub Actions will automatically:
 geoai-agent/
 ├── geoai_agent/
 │   ├── skills/
-│   │   └── geoai_agent/
+│   │   └── geo-ai/
 │   │       ├── skill.yaml          # Skill configuration
 │   │       └── __init__.py
 │   ├── __init__.py
-│   ├── __main__.py
 │   ├── main.py                     # Agent entry point
 │   └── agent_config.json           # Agent configuration
 ├── tests/
@@ -294,8 +241,6 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch: `git push origin feature/amazing-feature`
 5. Open a Pull Request
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
-
 ---
 
 ## 📄 License
@@ -340,5 +285,3 @@ uvx cookiecutter https://github.com/getbindu/create-bindu-agent.git
   <a href="https://discord.gg/3w5zuYUuwt">💬 Join Discord</a> •
   <a href="https://bindus.directory">🌐 Agent Directory</a>
 </p>
-#   g e o a i - a g e n t  
- 

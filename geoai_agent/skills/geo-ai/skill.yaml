@@ -1,0 +1,154 @@
+id: geo-ai-content-optimizer-v1
+name: geo-ai-content-optimizer
+version: 1.0.0
+author: paras@getbindu.com
+
+# Description
+description: |
+  Performs comprehensive AI-powered content optimization and SEO analysis using a sophisticated 6-agent workflow.
+  Automatically extracts web page titles, conducts query fan-out research, retrieves Google AI overviews,
+  generates structured summaries, and produces detailed comparison reports with actionable optimization recommendations.
+
+# Tags and Modes
+tags:
+  - content-optimization
+  - seo-analysis
+  - web-scraping
+  - ai-overview
+  - query-research
+  - competitive-analysis
+  - search-optimization
+
+input_modes:
+  - text/plain
+  - application/json
+
+output_modes:
+  - text/markdown
+  - text/plain
+
+# Example Queries
+examples:
+  - "Analyze and optimize https://www.nike.com for SEO and content optimization"
+  - "Please analyze https://example.com/blog/post for content optimization"
+  - "Extract title and generate optimization report for https://company.com/services"
+  - "Perform comprehensive SEO analysis on https://website.com and provide recommendations"
+  - "Compare web content with AI overviews for https://target-url.com"
+
+# Detailed Capabilities
+capabilities_detail:
+  primary_capability:
+    supported: true
+    description: "Comprehensive content optimization with 6-agent workflow"
+    features:
+      - "Title extraction from web pages using H1 tags"
+      - "Query fan-out research with comprehensive web searches"
+      - "Main query extraction for SEO optimization"
+      - "Google AI overview retrieval and analysis"
+      - "Structured content summarization"
+      - "Detailed comparison reports with action items"
+      - "SEO recommendations and content gap analysis"
+    limitations: "Requires accessible web pages; analysis is static (not real-time)"
+
+  secondary_capability:
+    supported: true
+    description: "Competitive analysis and content strategy insights"
+    features:
+      - "Competitor content comparison"
+      - "Search visibility analysis"
+      - "Content gap identification"
+      - "AI overview targeting strategies"
+      - "Keyword research validation"
+
+# Requirements
+requirements:
+  packages:
+    - agno>=2.2.0
+    - bindu>=2026.1.7
+    - newspaper4k>=0.2.8
+    - lxml-html-clean>=0.1.1
+    - openai>=1.60.0
+    - python-dotenv>=1.0.1
+  system:
+    - "Internet access for web scraping and search"
+  min_memory_mb: 512
+  external_services:
+    - OpenRouter API
+    - DuckDuckGo Search
+    - Newspaper4k Web Scraper
+
+# Performance Metrics
+performance:
+  avg_processing_time_ms: 45000
+  avg_time_per_phase_ms: 7500
+  max_concurrent_requests: 10
+  memory_per_request_mb: 500
+  timeout_seconds: 120
+  max_urls_per_analysis: 1
+  scalability: horizontal
+
+# Tool Restrictions
+allowed_tools:
+  - DuckDuckGoTools
+  - Newspaper4kTools
+
+# Rich Documentation
+documentation:
+  overview: |
+    Provides AI-driven content optimization and SEO analysis using a sophisticated 6-agent workflow.
+    Automatically analyzes web content, performs comprehensive research, retrieves AI overviews,
+    and generates detailed optimization reports with actionable recommendations.
+
+  key_features:
+    - "6-agent workflow for comprehensive analysis"
+    - "Automatic title extraction from web pages"
+    - "Query fan-out research with related queries"
+    - "Google AI overview retrieval and comparison"
+    - "Structured content summarization"
+    - "Detailed comparison tables with action items"
+    - "SEO recommendations and content optimization"
+
+  use_cases:
+    - "Website SEO optimization and improvement"
+    - "Content gap analysis and strategy development"
+    - "Competitive research and benchmarking"
+    - "AI overview targeting and optimization"
+    - "Search visibility improvement"
+    - "Content performance auditing"
+
+  methodology:
+    - "Phase 1: Title Scraping - Extract H1 or infer title from URL"
+    - "Phase 2: Query Fan-Out Research - Comprehensive web searches"
+    - "Phase 3: Main Query Extraction - Identify core search queries"
+    - "Phase 4: AI Overview Retrieval - Get Google AI overviews"
+    - "Phase 5: Query Summarization - Structure search findings"
+    - "Phase 6: Content Optimization - Generate comparison reports"
+
+  data_sources:
+    - "Target web page content via Newspaper4k"
+    - "DuckDuckGo search results for query research"
+    - "Google AI overviews from SERP analysis"
+    - "Generated content when AI overviews unavailable"
+
+  output_format:
+    - "Executive summary with optimization potential"
+    - "Title analysis with SEO assessment"
+    - "Query fan-out research findings"
+    - "Main query extraction results"
+    - "AI overview analysis and content"
+    - "Structured summary of search findings"
+    - "Detailed comparison table with action items"
+    - "Prioritized recommendations for SEO improvement"
+
+  limitations:
+    - "Static analysis only (no real-time monitoring)"
+    - "Focuses on content optimization (not technical SEO)"
+    - "Requires accessible and properly structured web pages"
+    - "Dependent on search engine availability and AI overview presence"
+
+  best_practices:
+    - "Provide clear, accessible URLs for analysis"
+    - "Focus on content-heavy pages for best results"
+    - "Use results as part of broader SEO strategy"
+    - "Implement high-priority recommendations first"
+    - "Regularly re-analyze content for optimization tracking"

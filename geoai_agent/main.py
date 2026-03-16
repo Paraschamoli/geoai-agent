@@ -88,8 +88,7 @@ async def initialize_agent() -> None:
 
     if not serp_api_key:
         error_msg = (
-            "SERP_API_KEY required. Set SERP_API_KEY environment variable.\n"
-            "Get your API key from: https://serper.dev/"
+            "SERP_API_KEY required. Set SERP_API_KEY environment variable.\nGet your API key from: https://serper.dev/"
         )
         raise ValueError(error_msg)
 
@@ -98,7 +97,7 @@ async def initialize_agent() -> None:
         # Remove invalid prefix
         if model_name.startswith("openrouter/"):
             model_name = model_name.replace("openrouter/", "")
-        
+
         # Replace invalid free model with a valid one
         if model_name == "meta-llama/llama-3.1-8b-instruct:free":
             model_name = "meta-llama/llama-3.1-8b-instruct"
@@ -131,7 +130,7 @@ async def initialize_agent() -> None:
         tools=[search_tools, newspaper_tools],
         description=dedent("""\
             You are an expert AI content optimization specialist with deep expertise in:
-            
+
             - Web content analysis and SEO optimization
             - Google Search algorithm understanding
             - AI Overview analysis and content gap identification
@@ -139,7 +138,7 @@ async def initialize_agent() -> None:
             - Content strategy and optimization recommendations
             - Competitive analysis and keyword research
             - User intent analysis and content matching
-            
+
             You run a comprehensive 6-agent workflow for content optimization:
             1. **Title Scraper** - Extracts main title from URLs
             2. **Query Fan-Out Researcher** - Performs comprehensive web searches
@@ -149,7 +148,7 @@ async def initialize_agent() -> None:
             6. **AI Content Optimizer** - Generates comparison reports and recommendations\
         """),
         instructions=dedent("""\
-            You are an expert AI content optimization specialist that runs a comprehensive 6-agent workflow. 
+            You are an expert AI content optimization specialist that runs a comprehensive 6-agent workflow.
             When given a URL, automatically execute the complete analysis process:
 
             **WORKFLOW EXECUTION:**

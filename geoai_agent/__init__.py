@@ -7,8 +7,7 @@
 #
 #  Thank you users! We ❤️ you! - 🌻
 
-"""geoai-agent - An Bindu Agent.
-"""
+"""geoai-agent - An Bindu Agent."""
 
 from geoai_agent.__version__ import __version__
 from geoai_agent.main import (
