@@ -1,0 +1,41 @@
+{
+  "author": "paras@getbindu.com",
+  "name": "geoai-agent",
+  "description": "AI Content Optimization agent that uses CrewAI to automate webpage content audits, compare with Google AI Overviews, and generate optimization recommendations.",
+  "version": "1.0.0",
+  "recreate_keys": false,
+  "skills": [],
+  "capabilities": {},
+  "agent_trust": "low",
+  "debug_mode": true,
+  "debug_level": 2,
+  "deployment": {
+    "url": "http://0.0.0.0:3773",
+    "expose": true,
+    "protocol_version": "1.0.0",
+    "proxy_urls": [
+      "0.0.0.0"
+    ],
+    "cors_origins": [
+      "*"
+    ]
+  },
+  "num_history_sessions": 5,
+  "environment_variables": [
+    {
+      "key": "OPENROUTER_API_KEY",
+      "description": "OpenRouter API key for LLM calls",
+      "required": true
+    },
+    {
+      "key": "SERP_API_KEY",
+      "description": "SERP API key for web searches",
+      "required": true
+    },
+    {
+      "key": "MODEL",
+      "description": "OpenRouter model name (default: openrouter/meta-llama/llama-3.1-8b-instruct:free)",
+      "required": false
+    }
+  ]
+}
