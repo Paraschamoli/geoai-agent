@@ -4,7 +4,9 @@
   "description": "AI Content Optimization agent that uses CrewAI to automate webpage content audits, compare with Google AI Overviews, and generate optimization recommendations.",
   "version": "1.0.0",
   "recreate_keys": false,
-  "skills": [],
+  "skills": [
+    "skills/geo-ai"
+  ],
   "capabilities": {},
   "agent_trust": "low",
   "debug_mode": true,

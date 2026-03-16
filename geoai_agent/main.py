@@ -29,43 +29,11 @@ _init_lock = asyncio.Lock()
 
 def load_config() -> dict:
     """Load agent configuration from project root."""
-    # Try multiple possible locations for agent_config.json
-    possible_paths = [
-        Path(__file__).parent.parent / "agent_config.json",  # Project root
-        Path(__file__).parent / "agent_config.json",  # Same directory as main.py
-        Path.cwd() / "agent_config.json",  # Current working directory
-    ]
+    # Get path to agent_config.json in project root
+    config_path = Path(__file__).parent / "agent_config.json"
 
-    for config_path in possible_paths:
-        if config_path.exists():
-            try:
-                with open(config_path) as f:
-                    return json.load(f)
-            except (PermissionError, json.JSONDecodeError) as e:
-                print(f"⚠️  Error reading {config_path}: {type(e).__name__}")
-                continue
-            except Exception as e:
-                print(f"⚠️  Unexpected error reading {config_path}: {type(e).__name__}")
-                continue
-
-    # If no config found or readable, create a minimal default
-    print("⚠️  No agent_config.json found, using default configuration")
-    return {
-        "name": "geoai-agent",
-        "description": "AI content optimization agent for web analysis",
-        "version": "1.0.0",
-        "deployment": {
-            "url": "http://127.0.0.1:3773",
-            "expose": True,
-            "protocol_version": "1.0.0",
-            "proxy_urls": ["127.0.0.1"],
-            "cors_origins": ["*"],
-        },
-        "environment_variables": [
-            {"key": "OPENROUTER_API_KEY", "description": "OpenRouter API key for LLM calls", "required": True},
-            {"key": "SERP_API_KEY", "description": "SERP API key for web searches", "required": True},
-        ],
-    }
+    with open(config_path) as f:
+        return json.load(f)
 
 
 async def initialize_agent() -> None:
